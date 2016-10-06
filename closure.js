@@ -19,7 +19,7 @@
 //   }
 // };
 //
-// console.log(nextId()); // function
+// console.log(nextId()); // [function]
 // console.log(nextId()); // function
 
 var loadedDie = (function () {
@@ -36,16 +36,15 @@ var loadedDie = (function () {
 // console.log(loadedDie());  // 6
 
 var countdownGenerator = function (x) {
-  var count = x;
   return function(){
-    if(count === 0){
+    if(x === 0){
       console.log("Blast Off!");
     }
-    else if(count < 0){
+    else if(x < 0){
       console.log("Rockets already gone, bub!");
     }
-    else console.log(`T-minus ${count}...`);
-    count--;
+    else console.log(`T-minus ${x}...`);
+    x--;
   };
 };
 
